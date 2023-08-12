@@ -15,7 +15,6 @@ const NoMatch = () => {
               <Button
                   variant="plain"
                   color="success"
-                  to="/"
               >
                   Go back to home
               </Button>

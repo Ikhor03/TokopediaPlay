@@ -2,12 +2,17 @@ import React from 'react';
 
 import ModeToggle from "../common/ModeToggle"
 import { Avatar, Dropdown, ListDivider, Menu, MenuButton, MenuItem, Sheet, Stack, Typography } from '@mui/joy';
-import { ArrowDropDownCircleOutlined, PlayArrow } from '@mui/icons-material';
+import { PlayArrow } from '@mui/icons-material';
 import RadioTag from '../common/RadioTag';
 
 const Top = () => {
     return (
-        <Sheet component={'header'} variant='soft' sx={{ padding: 2 }} >
+        <Sheet 
+            component={'header'} 
+            variant='soft' 
+            sx={{ paddingX : 4, paddingY: 2, position:'sticky', top:0, zIndex:10 }}
+        >
+
             <Stack spacing={3}>
                 <Stack
                     direction={'row'}
@@ -27,7 +32,7 @@ const Top = () => {
 
                         <Dropdown>
                             <MenuButton>{<Avatar />}</MenuButton>
-                            <Menu placement="bottom-end" endDecorator={<ArrowDropDownCircleOutlined />}>
+                            <Menu placement="bottom-end" >
                                 <MenuItem>Ikhor</MenuItem>
                                 <MenuItem>plug In Accessory</MenuItem>
                                 <ListDivider />

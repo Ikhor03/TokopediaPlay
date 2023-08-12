@@ -5,7 +5,6 @@ import '@fontsource/inter';
 import Home from './component/home';
 import NoMatch from './component/NoMatch';
 import DetailVideo from './component/detail';
-import ModeToggle from './component/common/ModeToggle';
 
 function App() {
   return (

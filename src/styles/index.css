@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a {
+  color: inherit; /* Inherit the color from parent element */
+  text-decoration: none; /* Remove underline */
+}

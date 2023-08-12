@@ -3,36 +3,48 @@ import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
-import LocationOnRoundedIcon from '@mui/icons-material/LocationOnRounded';
+import { Grid } from '@mui/joy';
+import { StoreMallDirectoryTwoTone } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
-export default function Thumbnail() {
+export default function Thumbnail({ data, isLoading }) {
+
     return (
-        <Card sx={{ minHeight: '280px', width: 320 }}>
-            <CardCover>
-                <img
-                    src="https://images.unsplash.com/photo-1542773998-9325f0a098d7?auto=format&fit=crop&w=320"
-                    srcSet="https://images.unsplash.com/photo-1542773998-9325f0a098d7?auto=format&fit=crop&w=320&dpr=2 2x"
-                    loading="lazy"
-                    alt=""
-                />
-            </CardCover>
-            <CardCover
-                sx={{
-                    background:
-                        'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
-                }}
-            />
-            <CardContent sx={{ justifyContent: 'flex-end' }}>
-                <Typography level="title-lg" textColor="#fff" mb={1}>
-                    Yosemite National Park
-                </Typography>
-                <Typography
-                    startDecorator={<LocationOnRoundedIcon />}
-                    textColor="neutral.300"
-                >
-                    California, USA
-                </Typography>
-            </CardContent>
-        </Card>
+        data.map((item) => (
+            <Grid
+                key={item._id}
+                xs={6} sm={4} md={3} lg={2}
+                sx={{ flexGrow: 1 }}
+            >
+                <Link to={`/channel/${item._id}`}>
+                    <Card sx={{ height: '380px', maxWidth: "170px" }} >
+                        <CardCover>
+                            <img
+                                src={item.thumbnail}
+                                loading="lazy"
+                                alt=""
+                            />
+                        </CardCover>
+                        <CardCover
+                            sx={{
+                                background:
+                                    'linear-gradient(to top, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px), linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0) 300px)',
+                            }}
+                        />
+                        <CardContent sx={{ justifyContent: 'flex-end' }}>
+                            <Typography level="title-lg" textColor="#fff" mb={1}>
+                                {item.title}
+                            </Typography>
+                            <Typography
+                                startDecorator={<StoreMallDirectoryTwoTone color="success" />}
+                                textColor="neutral.300"
+                            >
+                                {item.seller}
+                            </Typography>
+                        </CardContent>
+                    </Card>
+                </Link>
+            </Grid>
+        ))
     );
 }
