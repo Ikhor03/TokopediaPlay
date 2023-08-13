@@ -18,7 +18,6 @@ const Top = () => {
             const fullname = `${randomUser.name.first} ${randomUser.name.last}`;
             const profilePicture = randomUser.picture.medium
             setProfile({fullname, profilePicture, email : randomUser.email})
-            console.log(data)
         }
 
     }, [data])

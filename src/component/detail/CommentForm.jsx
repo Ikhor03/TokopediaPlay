@@ -1,30 +1,85 @@
-import { Chip, Divider, Sheet, Stack } from '@mui/joy';
-import React from 'react';
+import { Button, Chip, Divider, Sheet, Stack, Typography } from '@mui/joy';
+import React, { useEffect, useState } from 'react';
 import CommentInput from '../common/CommentInput';
 import { ChatBubble, SendRounded, VerifiedUserRounded } from '@mui/icons-material';
+import { useFetch } from '../../hook/useFetch';
 
 const CommentForm = () => {
+
+    const [input, setInput] = useState({ username: '', content: '' });
+    const [listComment, setListComment] = useState([]);
+
+    const { data } = useFetch('comment', {}, (data) => setListComment(data))
+
+    const {refetch : refetchPOST} = useFetch('comment', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        data: { username: input.username, content: input.content }
+    })
+    
+
+    // useEffect(() => {
+    //     // update list comment
+    //     // setListComment(data);
+
+    // }, [data])
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const { content, username } = input;
+        refetchPOST();
+        setListComment(data);
+        setInput({ username: '', content: '' })
+        alert(`comennya ${content}, yang komen ${username}`)
+    }
+
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
 
             <Chip sx={{ mb: 1 }} endDecorator={<ChatBubble />} >
                 LIVE CHAT
             </Chip>
-            
+
+            {/* Chat box */}
             <Sheet
                 variant="soft"
                 color="neutral"
                 sx={{
-                    p: 4,
-                    height: '250px'
-                }} />
+                    p: 2,
+                    height: '265px',
+                    overflowY: 'scroll'
+                }}>
+                {
+                    listComment.map((comment) => (
+                        <Typography key={comment?._id} fontSize={13} fontWeight={500} mb={3}
+                        >
+                            <Typography variant="solid">{comment?.username}</Typography>{" "}
+                            {comment?.content}
+                        </Typography>
+
+                    ))
+                }
+
+            </Sheet>
 
             <Stack spacing={1}>
-                <CommentInput placeholder='type your name' size='sm' endDecorator={<VerifiedUserRounded />} />
+                <CommentInput placeholder='type your name' size='sm'
+                    value={input?.username}
+                    onChange={(e) => setInput({ ...input, username: e.target.value })}
+                    endDecorator={<VerifiedUserRounded />}
+                />
+                <Divider />
                 <CommentInput placeholder='comment...'
-                    endDecorator={<SendRounded
-                        sx={{ cursor: 'pointer' }}
-                    />}
+                    value={input?.content}
+                    onChange={(e) => setInput({ ...input, content: e.target.value })}
+                    endDecorator={<Button
+                        variant='soft'
+                        color='neutral'
+                        type='submit'
+                    >
+                        <SendRounded />
+                    </Button>}
                 />
             </Stack>
         </form>

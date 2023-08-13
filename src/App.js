@@ -5,8 +5,10 @@ import '@fontsource/inter';
 import Home from './component/home';
 import NoMatch from './component/NoMatch';
 import DetailVideo from './component/detail';
+import { socket } from './socket';
 
 function App() {
+  socket.emit('hello', 'world');
   return (
     <CssVarsProvider>
       <Sheet sx={{minHeight:'100vh', minWidth:"100vw"}}>

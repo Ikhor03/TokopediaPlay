@@ -2,16 +2,19 @@ import { SendOutlined } from '@mui/icons-material'
 import { Input } from '@mui/joy'
 import React from 'react'
 
-const CommentInput = ({placeholder, endDecorator, size}) => {
+const CommentInput = ({placeholder, endDecorator, size, onChange, value}) => {
   return (
       <Input
           required
+          value={value}
           size={size}
-          variant='outlined'
+          variant='plain'
           placeholder={placeholder}
-          color="neutral"
+          color="success"
           endDecorator={endDecorator}
+          onChange={onChange}
           sx={{
+                color:'gray',
               '&::before': {
                   border: '1.5px solid var(--Input-focusedHighlight)',
                   transform: 'scaleX(0)',
