@@ -18,7 +18,7 @@ export const useFetch = (endpoint, config, dependencies) => {
         setIsLoading(true);
 
         try {
-            const res = await axios.request({ ...DEFAULT_CONFIG , config});
+            const res = await axios.request({ ...DEFAULT_CONFIG , ...config});
             
             setData(res.data.data || res.data);
             setIsLoading(false);

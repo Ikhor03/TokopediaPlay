@@ -108,12 +108,14 @@ const DetailVideo = () => {
                         <Grid xs={12} md={3}>
                             <Sheet
                                 sx={{
-                                    width: '100%',
-                                    height: '100%',
-                                    borderRadius: 7
+                                    width: 'calc(100% - 2)',
+                                    height: 'calc(100% -1)',
+                                    borderRadius: 7,
+                                    p: 1
                                 }}>
                                 <CommentForm />
                             </Sheet>
+                            
                         </Grid>
                     </Grid>
                 </Sheet>
