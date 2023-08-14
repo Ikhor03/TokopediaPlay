@@ -11,27 +11,19 @@ const CommentForm = () => {
 
     const { data } = useFetch('comment', {}, (data) => setListComment(data))
 
-    const {refetch : refetchPOST} = useFetch('comment', {
+    const {refetch : refetchPOST, data: postedData} = useFetch('comment', {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
         data: { username: input.username, content: input.content }
-    })
-    
-
-    // useEffect(() => {
-    //     // update list comment
-    //     // setListComment(data);
-
-    // }, [data])
+    }, (data) => listComment.push(data))
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
         const { content, username } = input;
         refetchPOST();
-        setListComment(data);
-        setInput({ username: '', content: '' })
-        alert(`comennya ${content}, yang komen ${username}`)
+        setInput({ username: '', content: '' });
+        alert(`comennya ${content}, yang komen ${username}`);
     }
 
     return (
