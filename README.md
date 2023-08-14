@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Ikhor03/TokopediaPlay">
+    <img src="public/favicon.ico" alt="Logo" width="80" height="80">
+  </a>
 
-## Available Scripts
+<h3 align="center">Tokopedia Play Clone</h3>
 
-In the project directory, you can run:
+  <p align="center">
+    <br />
+    <a href="https://tokopedia-play-dun.vercel.app/">Web Demo</a>
+  </p>
+</div>
 
-### `npm start`
+<!-- ABOUT THE PROJECT -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## About The Project
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[![Product Name Screen Shot][product-screenshot]](https://tokopedia-play-dun.vercel.app/)
 
-### `npm test`
+This project, crafted for my final exam in the Generasi Gigih program by [GoTo Impact Foundation](https://www.goto-impact.org/), was a thrilling challenge. Juggling this alongside two other projects within the same timeframe was no small feat. As I reflect, I'm intrigued by the myriad possibilities to enhance its functionality further. Your feedback matters! Connect with me on [LinkedIn](https://www.linkedin.com/in/imamkhoiri/) or [Instagram](https://www.instagram.com/ikhor03/) for insightful discussions. And if you're curious, don't miss exploring [the repository](https://github.com/Ikhor03/tokpedPlay) to uncover the API powering this creation.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### `npm run build`
+### Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Create React App](https://github.com/facebook/create-react-app)
+- [Joy-UI](https://tailwindcss.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Feature
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- list of clickable thumbnails
+- Loading indicator
+- Avatar shows random profile
+- list of clickable products
+- live Chat simulation
+- Dark Mode
 
-### `npm run eject`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- GETTING STARTED -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+You can fork this repo
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Installation
 
-## Learn More
+1. Clone the repo
+   ```sh
+   git clone https://github.com/Ikhor03/Dapur-Solo-FE.git
+   ```
+2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm). And so you can install dependencies
+   ```sh
+   npm install
+   ```
+3. Start the development server
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```sh
+   npm start
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Code Splitting
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+[product-screenshot]: public/tokpedplay-ss.png
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/

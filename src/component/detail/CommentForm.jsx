@@ -20,10 +20,8 @@ const CommentForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { content, username } = input;
         refetchPOST();
         setInput({ username: '', content: '' });
-        alert(`comennya ${content}, yang komen ${username}`);
     }
 
     return (
