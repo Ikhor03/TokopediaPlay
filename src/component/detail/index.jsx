@@ -1,4 +1,4 @@
-import { Grid, Sheet, Stack } from '@mui/joy'
+import { Badge, Grid, Sheet, Stack, Typography } from '@mui/joy'
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useFetch } from '../../hook/useFetch';
@@ -6,13 +6,13 @@ import VideoCard from './VideoCard';
 import CommentForm from './CommentForm';
 import ModeToggle from '../common/ModeToggle';
 import ProductCard from './ProductsCard';
-import { ArrowBack } from '@mui/icons-material';
+import { ArrowBack, StoreMallDirectory } from '@mui/icons-material';
 
 const DetailVideo = () => {
     const { id } = useParams();
 
     const { data, error, isLoading } = useFetch(`/products`);
-    // console.log({ data, error, id })
+    const {data : videoDetail} = useFetch(`videos/${id}`);
     const defaultThumbnail = 'https://images.unsplash.com/photo-1529676468696-f3a47aba7d5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80'
 
     return (
@@ -72,6 +72,18 @@ const DetailVideo = () => {
                             <Link to={'/'}>
                                 <ArrowBack cursor='pointer' />
                             </Link>
+
+                            <Badge color='success' >
+                                <Typography
+                                    variant="soft"
+                                    startDecorator={<StoreMallDirectory />}
+                                    fontSize="sm"
+                                    sx={{ '--Typography-gap': '0.5rem', p: 1 }}
+                                >
+                                    {videoDetail.seller}
+                                </Typography>
+                            </Badge>
+
                             <ModeToggle />
                         </Stack>
                     </Sheet>
