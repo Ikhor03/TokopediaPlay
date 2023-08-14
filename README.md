@@ -51,7 +51,7 @@ You can fork this repo
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Ikhor03/Dapur-Solo-FE.git
+   git clone https://github.com/Ikhor03/TokopediaPlay.git
    ```
 2. Install and use the correct version of Node using [NVM](https://github.com/nvm-sh/nvm). And so you can install dependencies
    ```sh
