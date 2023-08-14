@@ -8,7 +8,7 @@ import DetailVideo from './component/detail';
 import { socket } from './socket';
 
 function App() {
-  socket.emit('hello', 'world');
+  document.title = "Tokopedia Play |"
   return (
     <CssVarsProvider>
       <Sheet sx={{minHeight:'100vh', minWidth:"100vw"}}>

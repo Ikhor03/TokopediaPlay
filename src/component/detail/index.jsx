@@ -9,6 +9,7 @@ import ProductCard from './ProductsCard';
 import { ArrowBack, StoreMallDirectory } from '@mui/icons-material';
 
 const DetailVideo = () => {
+    document.title = "Tokped Play | Channel"
     const { id } = useParams();
 
     const { data, error, isLoading } = useFetch(`/products`);

@@ -6,7 +6,7 @@ export const useFetch = (endpoint, config, action, dependencies) => {
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const baseUrl = 'http://localhost:4000/api';
+    const baseUrl = 'https://breakable-cyan-crow.cyclic.app/api';
 
     const DEFAULT_CONFIG = {
         method: 'GET',
