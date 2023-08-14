@@ -5,7 +5,12 @@ const VideoCard = () => {
 
     return (
         <Sheet sx={{
-            height: '90%',
+            height: {
+                xs: 300, // theme.breakpoints.up('xs')
+                // sm: 200, // theme.breakpoints.up('sm')
+                lg: "90%", // theme.breakpoints.up('lg')
+                // xl: 500, // theme.breakpoints.up('xl')
+            },
             Width: "100%",
             // overflow: 'scroll'
         }} >

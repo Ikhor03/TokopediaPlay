@@ -54,9 +54,11 @@ const DetailVideo = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    height: "100vh",
+                    height: "auto",
                     width: '100vw',
-                    maxHeight: '470px',
+                    maxHeight: {
+                        lg: '470px',
+                    },
                     maxWidth: '1200px',
                     padding: 3,
                     borderRadius: 15
@@ -89,14 +91,17 @@ const DetailVideo = () => {
                     </Sheet>
 
                     {/* Start Grid */}
-                    <Grid container spacing={2} sx={{ flexGrow: 1, height: '100%', maxHeight: '1000px' }}>
+                    <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }} sx={{ flexGrow: 1, height: '100%'}}>
                         {/* Product List */}
                         <Grid xs={12} md={2} >
 
                             <Sheet variant='outlined' sx={{ 
-                                width: '100%',
+                                width: 'calc(100% - 2)',
+                                height: 'calc(100% -1)',
                                 borderRadius: 7,
-                                maxHeight: '450px',
+                                maxHeight: {
+                                    md: '450px',
+                                },
                                 overflowX: 'hidden',
                                 overflowY: 'auto'
                             }}>
