@@ -28,7 +28,7 @@ This project, crafted for my final exam in the Generasi Gigih program by [GoTo I
 ### Built With
 
 - [Create React App](https://github.com/facebook/create-react-app)
-- [Joy-UI](https://tailwindcss.com/)
+- [Joy-UI](https://mui.com/joy-ui/getting-started/)
 
 ### Feature
 
